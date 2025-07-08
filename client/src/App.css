@@ -1,0 +1,125 @@
+:root {
+  --primary-green: #2e7d32;
+  --dark-green: #1b5e20;
+  --light-green: #e8f5e9;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--dark-green);
+}
+
+@media (max-width: 768px) {
+  .task-card {
+    padding: 15px;
+  }
+  
+  .verification-panel > div {
+    padding: 10px 0;
+  }
+  
+  .task-card button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Animation for task cards */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-card {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Delay animations for staggered effect */
+.task-card:nth-child(1) { animation-delay: 0.1s; }
+.task-card:nth-child(2) { animation-delay: 0.2s; }
+.task-card:nth-child(3) { animation-delay: 0.3s; }
+.task-card:nth-child(4) { animation-delay: 0.4s; }
+.task-card:nth-child(5) { animation-delay: 0.5s; }
+
+
+/* Green theme utility classes */
+.bg-green {
+  background-color: #2e7d32;
+}
+
+.text-green {
+  color: #2e7d32;
+}
+
+.border-green {
+  border-color: #2e7d32;
+}
+
+.hover-green:hover {
+  color: #2e7d32;
+}
+
+.bg-light-green {
+  background-color: #e8f5e9;
+}
+
+/* Spacing utilities */
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+/* Flex utilities */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/* Card styling */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+}
