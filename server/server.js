@@ -6,9 +6,9 @@ const morgan = require('morgan');
 require('dotenv').config();
 
 // Import routes
-const authRoutes = require('./routes/auth');
-const taskRoutes = require('./routes/tasks');
-const profileRoutes = require('./routes/profile');
+const authRoutes = require('./routers/auth');
+const taskRoutes = require('./routers/tasks');
+const profileRoutes = require('./routers/Profile');
 
 // Initialize app
 const app = express();

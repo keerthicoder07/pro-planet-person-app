@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from './Authcontext';
 
 const TaskCard = ({ task, onAccept, onVerify }) => {
   const { user } = useContext(AuthContext);
@@ -43,3 +43,5 @@ const TaskCard = ({ task, onAccept, onVerify }) => {
     </div>
   );
 };
+
+export default TaskCard;

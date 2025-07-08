@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './components/Authcontext';
 import Home from './pages/Home';
 import Login from './components/Login';
+import Register from './components/Register';
+import PrivateRoute from './components/PrivateRoute';
 import Dashboard from './components/Dashboard';
 import Tasks from './components/Tasks';
 import Leaderboard from './components/Leaderboard';
