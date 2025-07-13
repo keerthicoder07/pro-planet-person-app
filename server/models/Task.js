@@ -1,3 +1,4 @@
+// server/models/Task.js
 const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema({
@@ -76,9 +77,24 @@ const taskSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+}, {
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
 });
 
 // Index for geospatial queries
 taskSchema.index({ location: '2dsphere' });
+
+// Virtual for duration (not stored in DB)
+taskSchema.virtual('durationDays').get(function() {
+  if (!this.endDate) return null;
+  return Math.ceil((this.endDate - this.startDate) / (1000 * 60 * 60 * 24));
+});
+
+// Cascade delete participations when task is deleted
+taskSchema.pre('remove', async function(next) {
+  await this.model('Participation').deleteMany({ task: this._id });
+  next();
+});
 
 module.exports = mongoose.model('Task', taskSchema);

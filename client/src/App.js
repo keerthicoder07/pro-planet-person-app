@@ -1,16 +1,18 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './components/Authcontext';
-import Home from './pages/Home';
+import Home from './components/Home';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Tasks from './components/Tasks';
 import Leaderboard from './components/Leaderboard';
-import Profile from './pages/Profile';
-import Chatbot from './pages/Chatbot';
-import CreateTask from './pages/CreateTask';
+import Profile from './components/Profile';
+import Chatbot from './components/Chatbot';
+import CreateTask from './components/CreateTask';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 
 function App() {
@@ -24,7 +26,6 @@ function App() {
               {/* Public routes */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
               
               {/* Protected routes */}
               <Route path="/dashboard" element={
